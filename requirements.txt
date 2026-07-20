@@ -1,0 +1,23 @@
+# ---------------------------------------------------------------------------
+# WorkFlow Pro - QA Automation Framework
+# Runtime & test dependencies (pinned for reproducible CI runs)
+# ---------------------------------------------------------------------------
+
+# Browser automation (sync API used directly; no pytest-playwright plugin needed
+# because the framework defines its own browser/context/page fixtures).
+playwright==1.48.0
+
+# Test runner & plugins
+pytest==8.3.3
+pytest-xdist==3.6.1            # parallel execution (-n auto)
+pytest-rerunfailures==14.0     # retry flaky tests in CI
+pytest-html==4.1.1             # standalone HTML report
+
+# API testing
+requests==2.32.3
+
+# Configuration & environment
+python-dotenv==1.0.1
+
+# Linting & formatting
+ruff==0.14.5

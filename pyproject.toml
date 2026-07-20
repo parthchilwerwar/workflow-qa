@@ -1,0 +1,30 @@
+# ---------------------------------------------------------------------------
+# Tooling configuration for the WorkFlow Pro QA automation case study.
+#
+# Pytest configuration lives in pytest.ini. This file configures Ruff (linter +
+# formatter). Kept intentionally small — one linter/formatter, no more.
+# ---------------------------------------------------------------------------
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+extend-exclude = ["docs", "reports"]
+
+[tool.ruff.lint]
+# A focused, useful rule set:
+#   E,W  pycodestyle   F  pyflakes   I  isort   UP  pyupgrade
+#   B    bugbear       C4 comprehensions        SIM simplify
+select = ["E", "W", "F", "I", "UP", "B", "C4", "SIM"]
+ignore = [
+    "E501",   # line length handled by the formatter
+    "B008",   # false positives on pytest fixture defaults
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Test files use pytest fixtures whose names shadow builtins/imports by design.
+"tests/*" = ["F811"]
+"fixtures/conftest.py" = ["F811"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

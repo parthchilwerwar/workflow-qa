@@ -1,0 +1,23 @@
+{
+  "name": "QA Automation Sample Project",
+  "description": "Representative project payload used to seed data via the API before UI validation. Names are made unique at runtime by appending a timestamp/UUID.",
+  "status": "active",
+  "members": [
+    {
+      "email": "qa.admin@company1.test",
+      "role": "admin"
+    },
+    {
+      "email": "qa.member@company1.test",
+      "role": "member"
+    },
+    {
+      "email": "qa.viewer@company1.test",
+      "role": "viewer"
+    }
+  ],
+  "metadata": {
+    "priority": "high",
+    "tags": ["automation", "case-study", "smoke"]
+  }
+}
